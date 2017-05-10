@@ -1,0 +1,7 @@
+<h2>All the farms</h2>
+<ul>
+  <% @farms.each do |farm| %>
+    <li><%=farm.name%></li>
+    <%= erb :"/farms/barnyard_animals/new", locals: {farm: farm} %>
+  <% end %>
+</ul>
