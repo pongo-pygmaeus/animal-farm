@@ -62,3 +62,16 @@ end
                         farm: Farm.all.sample)
 
 end
+
+potato_farmer = Farmer.create(name: "Sierra")
+
+potato_farm = Farm.create(name: "Just Kidding",
+              state:  "ON",
+              town:   "Waterloo",
+              farmer: potato_farmer)
+
+300.times do
+  BarnyardAnimal.create(name: Faker::Name.first_name,
+                        animal_type: AnimalType.find_by(name: "Goat"),
+                        farm: potato_farm)
+end
