@@ -3,6 +3,44 @@ BarnyardAnimal.destroy_all
 Farm.destroy_all
 Farmer.destroy_all
 
+farm_animals = [
+  "Alpaca",
+  "Buffalo",
+  "Banteng",
+  "Cow",
+  "Cat",
+  "Chicken",
+  "Common Carp",
+  "Camel",
+  "Donkey",
+  "Dog",
+  "Duck",
+  "Emu",
+  "Goat",
+  "Gayal",
+  "Guinea Pig",
+  "Goose",
+  "Horse",
+  "Honey Bee",
+  "Llama",
+  "Pig",
+  "Pigeon",
+  "Rhea",
+  "Rabbit",
+  "Sheep",
+  "Silkworm",
+  "Turkey",
+  "Yak",
+  "Zebu",
+  "Beefalo",
+  "Botswana",
+  "Black Rock Chicken",
+  "Mule",
+  "Yakow",
+  "Yakalo",
+  "Zubron"
+]
+
 20.times do
   Farmer.create(name: Faker::Name.name)
 end
@@ -14,8 +52,8 @@ end
               farmer: Farmer.all.sample)
 end
 
-10.times do
-  AnimalType.find_or_create_by(name: Faker::Cat.breed)
+farm_animals.each do |type|
+  AnimalType.create(name: type)
 end
 
 70.times do
